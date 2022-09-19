@@ -40,6 +40,9 @@ public class GeolocatorPlugin implements FlutterPlugin, ActivityAware {
           if (service instanceof GeolocatorLocationService.LocalBinder) {
             initialize(((GeolocatorLocationService.LocalBinder) service).getLocationService());
           }
+          else {
+              Log.d(TAG, "Invalid binder received: " + service.getClass().getSimpleName());
+          }
         }
 
         @Override
