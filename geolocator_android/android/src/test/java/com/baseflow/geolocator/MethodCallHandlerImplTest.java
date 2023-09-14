@@ -77,7 +77,7 @@ public class MethodCallHandlerImplTest {
 
     Map<String, Object> arguments = new HashMap<>();
     ArgumentCaptor<Object> resultCaptor = ArgumentCaptor.forClass(Object.class);
-    Map<String, Object> expectedJson = LocationMapper.toHashMap(mockLocation);
+    Map<String, Object> expectedJson = LocationMapper.toHashMap(mockLocation, false);
 
     // Act
     methodCallHandler.onMethodCall(new MethodCall("getCurrentPosition", arguments), mockResult);

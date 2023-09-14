@@ -119,7 +119,7 @@ public class GeolocatorLocationService extends Service {
       geolocationManager.startPositionUpdates(
           locationClient,
           activity,
-          (Location location) -> events.success(LocationMapper.toHashMap(location)),
+          (Location location) -> events.success(LocationMapper.toHashMap(location, locationOptions.isUseMSLAltitude())),
           (ErrorCodes errorCodes) ->
               events.error(errorCodes.toString(), errorCodes.toDescription(), null));
     }

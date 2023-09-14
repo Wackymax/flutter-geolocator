@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LocationMapper {
-  public static Map<String, Object> toHashMap(Location location) {
+  public static Map<String, Object> toHashMap(Location location, boolean useMslAltitude) {
     if (location == null) {
       return null;
     }
@@ -31,6 +31,9 @@ public class LocationMapper {
         Double mslAltitude = location.getExtras().getDouble(NmeaClient.NMEA_ALTITUDE_EXTRA);
         position.put("altitude", mslAltitude);
       }
+    }
+    if(useMslAltitude && Build.VERSION.SDK_INT > Build.VERSION_CODES.TIRAMISU) {
+        if (location.hasMslAltitude()) position.put("altitude", location.getMslAltitudeMeters());
     }
     return position;
   }

@@ -194,7 +194,7 @@ class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
     geolocationManager.getLastKnownPosition(
         context,
         forceLocationManager != null && forceLocationManager,
-        (Location location) -> result.success(LocationMapper.toHashMap(location)),
+        (Location location) -> result.success(LocationMapper.toHashMap(location, false)),
         (ErrorCodes errorCode) ->
             result.error(errorCode.toString(), errorCode.toDescription(), null));
   }
@@ -249,7 +249,7 @@ class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
           replySubmitted[0] = true;
           geolocationManager.stopPositionUpdates(locationClient);
           pendingCurrentPositionLocationClients.remove(requestId);
-          result.success(LocationMapper.toHashMap(location));
+          result.success(LocationMapper.toHashMap(location, locationOptions.isUseMSLAltitude()));
         },
         (ErrorCodes errorCode) -> {
           if (replySubmitted[0]) {

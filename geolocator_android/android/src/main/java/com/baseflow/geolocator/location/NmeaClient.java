@@ -52,7 +52,9 @@ public class NmeaClient {
     }
 
     if (locationOptions != null && locationOptions.isUseMSLAltitude()) {
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && locationManager != null) {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
+              && Build.VERSION.SDK_INT <= Build.VERSION_CODES.TIRAMISU
+              && locationManager != null) {
         locationManager.addNmeaListener(nmeaMessageListener, null);
         listenerAdded = true;
       }
@@ -61,7 +63,9 @@ public class NmeaClient {
 
   public void stop() {
     if (locationOptions != null && locationOptions.isUseMSLAltitude()) {
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && locationManager != null) {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
+              && Build.VERSION.SDK_INT <= Build.VERSION_CODES.TIRAMISU
+              && locationManager != null) {
         locationManager.removeNmeaListener(nmeaMessageListener);
         listenerAdded = false;
       }
