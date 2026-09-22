@@ -1,3 +1,9 @@
+## 5.1.0
+
+- Adds `verticalSpeed` (m/s) and `verticalSpeedAccuracy` (m/s) extraction from location extras.
+- Forwards `hasVerticalSpeed`, `hasVerticalSpeedAccuracy`, and presence flags in `AndroidPosition`.
+- Adds unit tests for float/double extras parsing and presence flags preservation.
+
 ## 5.0.4
 
 - Updates Android Gradle plugin wrapper to 9.3.1.
