@@ -1,3 +1,8 @@
+## 14.1.0
+
+- Updates `geolocator_platform_interface` to `^4.4.0`.
+- Updates `geolocator_android` to `^5.1.0`.
+
 ## 14.0.3
 
 - Updates the following dependencies:
