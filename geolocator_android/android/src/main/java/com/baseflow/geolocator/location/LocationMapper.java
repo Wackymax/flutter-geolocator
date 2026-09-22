@@ -2,6 +2,9 @@ package com.baseflow.geolocator.location;
 
 import android.location.Location;
 import android.os.Build;
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
