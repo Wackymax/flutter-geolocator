@@ -44,9 +44,9 @@ public class LocationMapperTest {
 
     Bundle extras = mock(Bundle.class);
     when(extras.containsKey(NmeaClient.VERTICAL_SPEED_EXTRA)).thenReturn(true);
-    when(extras.getDouble(NmeaClient.VERTICAL_SPEED_EXTRA)).thenReturn(2.5);
+    when(extras.get(NmeaClient.VERTICAL_SPEED_EXTRA)).thenReturn(2.5);
     when(extras.containsKey(NmeaClient.VERTICAL_SPEED_ACCURACY_EXTRA)).thenReturn(true);
-    when(extras.getDouble(NmeaClient.VERTICAL_SPEED_ACCURACY_EXTRA)).thenReturn(0.3);
+    when(extras.get(NmeaClient.VERTICAL_SPEED_ACCURACY_EXTRA)).thenReturn(0.3);
     when(location.getExtras()).thenReturn(extras);
 
     Map<String, Object> map = LocationMapper.toHashMap(location);
