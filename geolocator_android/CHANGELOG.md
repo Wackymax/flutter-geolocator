@@ -1,6 +1,6 @@
 ## 5.1.0
 
-- Adds `verticalSpeed` (m/s) and `verticalSpeedAccuracy` (m/s) extraction from location extras.
+- Forwards optional `verticalSpeed` (m/s) and `verticalSpeedAccuracy` (m/s) from location extras when a location provider supplies them. This package does not calculate vertical speed or guarantee that the extras are present or GNSS Doppler-derived.
 - Forwards `hasVerticalSpeed`, `hasVerticalSpeedAccuracy`, and presence flags in `AndroidPosition`.
 - Adds unit tests for float/double extras parsing and presence flags preservation.
 

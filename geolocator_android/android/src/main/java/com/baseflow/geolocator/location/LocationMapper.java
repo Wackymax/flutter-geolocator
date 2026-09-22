@@ -54,6 +54,8 @@ public class LocationMapper {
           position.put("altitude_accuracy", mslAccuracy);
         }
       }
+      // Location has no standard vertical-speed getter. Only forward an
+      // existing provider extra; altitude accuracy is not speed accuracy.
       Double verticalSpeed =
           getDoubleExtra(
               location.getExtras(),
