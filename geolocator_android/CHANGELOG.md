@@ -1,3 +1,7 @@
+## 5.0.4
+
+- Updates Android Gradle plugin wrapper to 9.3.1.
+
 ## 5.0.3
 
 - Updates `flutter_lints` to version 6.0.0.
