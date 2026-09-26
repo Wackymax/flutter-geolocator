@@ -1,3 +1,13 @@
+## 5.1.0
+
+- Forwards optional `verticalSpeed` (m/s) and `verticalSpeedAccuracy` (m/s) from location extras when a location provider supplies them. This package does not calculate vertical speed or guarantee that the extras are present or GNSS Doppler-derived.
+- Forwards `hasVerticalSpeed`, `hasVerticalSpeedAccuracy`, and presence flags in `AndroidPosition`.
+- Adds unit tests for float/double extras parsing and presence flags preservation.
+
+## 5.0.4
+
+- Updates Android Gradle plugin wrapper to 9.3.1.
+
 ## 5.0.3
 
 - Updates `flutter_lints` to version 6.0.0.
